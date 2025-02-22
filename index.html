@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bike Traffic</title>
+    <title>Bikewatching</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <!-- Mapbox GL JS CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="map.css">
 </head>
 <body>
-    11
+    <header style="display: flex; gap: 1em; align-items: baseline;">
+        <h1>🚴🏼‍♀️ Bikewatching</h1>
+        <div style="margin-left: auto; display: flex; flex-direction: column; align-items: flex-end;">
+            <div style="display: flex; align-items: center; gap: 0.5em;">
+                <span>Filter by time:</span>
+                <input id="time-slider" type="range" min="-1" max="1440" value="-1" />
+            </div>
+            <time id="selected-time" style="margin-right: 0.5em;"></time>
+            <em id="any-time">(any time)</em>
+        </div>
+    </header>
+
+    <div id="map">
+        <svg></svg>
+    </div>
+    <!-- Load Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <!-- Load D3.js from CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Load your custom map initialization script -->
+    <script src="map.js"></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+body {
+    font: 100%/1.5 system-ui, sans-serif;
+    display: flex;
+    flex-flow: column;
+    max-width: 80em;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1em;
+}
+
+header {
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 0.9em;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin-top: 0.5em;
+}
