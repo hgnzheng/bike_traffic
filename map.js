@@ -11,7 +11,7 @@ const map = new mapboxgl.Map({
     maxZoom: 18
 });
 
-const stationFlow = d3.scaleQuantize().domain([0, 1]).range([0, 0.5, 1]);
+let stationFlow = d3.scaleQuantize().domain([0, 1]).range([0, 0.5, 1]);
 
 // We'll store 1440 "buckets" (one per minute of the day) for departures and arrivals.
 // This lets us quickly grab only the trips we need when filtering by time.
