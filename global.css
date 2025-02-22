@@ -20,6 +20,45 @@ label {
 }
 
 input[type="range"] {
-    width: 200px;
+    width: 350px;
     margin-top: 0.5em;
+}
+
+/* Legend container: horizontal layout with a title */
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-block: 1em;
+    font: 0.9em/1.4 sans-serif;
+}
+
+.legend-title {
+font-weight: bold;
+}
+
+/* Each legend item contains a swatch and a label */
+.legend-item {
+display: flex;
+align-items: center;
+gap: 0.5em;
+}
+
+/* Swatch: a small circle whose background is set via CSS custom properties */
+.swatch {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    background: color-mix(
+        in oklch,
+        var(--color-departures) calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
+    );
+}
+
+/* Legend label styling */
+.legend-label {
+    color: #333;
 }

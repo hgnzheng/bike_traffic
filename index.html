@@ -26,6 +26,24 @@
     <div id="map">
         <svg></svg>
     </div>
+
+    <div class="legend">
+        <span class="legend-title">LEGEND:</span>
+        <div class="legend-item">
+          <span class="swatch" style="--departure-ratio: 1"></span>
+          <span class="legend-label">More departures</span>
+        </div>
+        <div class="legend-item">
+          <span class="swatch" style="--departure-ratio: 0.5"></span>
+          <span class="legend-label">Balanced</span>
+        </div>
+        <div class="legend-item">
+          <span class="swatch" style="--departure-ratio: 0"></span>
+          <span class="legend-label">More arrivals</span>
+        </div>
+      </div>
+         
+
     <!-- Load Mapbox GL JS -->
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
     <!-- Load D3.js from CDN -->

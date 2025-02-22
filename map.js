@@ -141,7 +141,7 @@ map.on('load', () => {
             .attr('stroke', 'white')
             .attr('stroke-width', 1)
             .attr('opacity', 0.6)
-            .style('--departure-ratio', d => stationFlow(d.departures / d.totalTraffic));
+            // .style('--departure-ratio', d => stationFlow(d.departures / d.totalTraffic));
 
         // After stations load, load trip data and populate our minute-buckets
         return d3.csv(
@@ -219,8 +219,14 @@ map.on('load', () => {
             // Update each circle’s radius + tooltip
             circles
                 .data(filteredStations, d => d.short_name)
-                .join('circle') // Ensures correct update pattern
+                .join('circle')
                 .attr('r', d => radiusScale(d.totalTraffic))
+                // .style('--departure-ratio', d => stationFlow(d.departures / d.totalTraffic))
+                .style('--departure-ratio', d => {
+                    if (d.totalTraffic === 0) return 0.5;
+                    const ratio = d.departures / d.totalTraffic;
+                    return stationFlow(ratio);
+                })
                 .each(function(d) {
                 d3.select(this).select('title').remove();
                 d3.select(this)
